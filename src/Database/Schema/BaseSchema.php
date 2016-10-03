@@ -117,7 +117,7 @@ abstract class BaseSchema
     public function dropTableSql(Table $table)
     {
         $sql = sprintf(
-            'DROP TABLE %s',
+            'DROP TABLE IF EXISTS %s',
             $this->_driver->quoteIdentifier($table->name())
         );
 
