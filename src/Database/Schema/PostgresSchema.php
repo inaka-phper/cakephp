@@ -569,7 +569,7 @@ class PostgresSchema extends BaseSchema
     public function dropTableSql(Table $table)
     {
         $sql = sprintf(
-            'DROP TABLE %s CASCADE',
+            'DROP TABLE IF EXISTS %s CASCADE',
             $this->_driver->quoteIdentifier($table->name())
         );
 
